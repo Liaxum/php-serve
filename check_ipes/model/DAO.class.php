@@ -17,7 +17,7 @@
             // premier champ : nom d'utilisateur
             // second champ : mot de passe
 
-            $this->db = new PDO('mysql:host=localhost;dbname=check_ipes', 'check_ipes', 'check_ipes');
+            $this->db = new PDO('sqlite:../data/check_ipes.db');
         }
 
         // Getters
@@ -159,8 +159,8 @@
             $mute = $playerInfo->getMute();
 
             if ($nFFE != $this->getPlayer($name)->getnFFE()) {
-                $sql = "insert into Joueur (nFFE, nom, elo, sexe,mute) values ('$nFFE', '$name', '$elo', '$sex', '$mute');";
-                $res = $this->db->query($sql);
+		$sql = "insert into Joueur (nFFE, nom, elo, sexe,mute) values ('$nFFE', '$name', '$elo', '$elo', '$mute');";
+		$res = $this->db->query($sql);
             }
         }
 

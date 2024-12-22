@@ -1,2 +1,2 @@
 <?php
-    header('Location: ./check_ipes/controler/login.ctrl.php');
+    header('Location: ./controler/login.ctrl.php');

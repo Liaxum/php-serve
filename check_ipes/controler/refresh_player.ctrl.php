@@ -19,7 +19,7 @@
                 ]
             ]
         );
-
+	
         $doc->loadHTML($res->getBody());
         $tags = $doc->getElementsByTagName('tr');
         $player = null;
